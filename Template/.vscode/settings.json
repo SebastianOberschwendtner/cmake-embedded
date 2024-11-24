@@ -1,0 +1,11 @@
+{
+    "embedded_tools":
+    {
+        "svdPath": "<-svd-file->",
+        "openocd":
+        {
+            "interface": "interface/<-interface->.cfg",
+            "target": "target/<-target->.cfg"
+        }
+    }
+}

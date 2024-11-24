@@ -1,0 +1,36 @@
+{
+    "version": 10,
+    "configurePresets": [
+        {
+            "name": "arm-base",
+            "description": "Base configuration for compiling firmware for ARM Cortex-M CPUs",
+            "hidden": true,
+            "toolchainFile": "${sourceDir}/../cmake-embedded/Toolchains/gnu-arm-none-eabi-cortex-m0plus.cmake",
+            "generator": "Ninja",
+            "binaryDir": "build",
+            "cacheVariables": {
+                "LINKER_SCRIPT": "${sourceDir}/device/STM32L073VZTx_FLASH.ld"
+            }
+        },
+        {
+            "name": "Debug",
+            "description": "Debug build configuration",
+            "inherits": "arm-base",
+            "cacheVariables": {
+                "CMAKE_BUILD_TYPE": "Debug",
+                "CMAKE_C_FLAGS_DEBUG": "-Og -g -Wall -Wextra",
+                "CMAKE_CXX_FLAGS_DEBUG": "-Og -g -Wall -Wextra"
+            }
+        },
+        {
+            "name": "Release",
+            "description": "Release build configuration",
+            "inherits": "arm-base",
+            "cacheVariables": {
+                "CMAKE_BUILD_TYPE": "Release",
+                "CMAKE_C_FLAGS_DEBUG": "-O2",
+                "CMAKE_CXX_FLAGS_DEBUG": "-O2"
+            }
+        }
+    ]
+}
