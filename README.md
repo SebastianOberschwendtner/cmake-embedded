@@ -14,7 +14,7 @@ This is a minimum toolchain setup to cross compile with the *gnu-arm-none-eabi* 
 5. Configure your project with:
 
 ```sh 
-cmake --preset debug 
+cmake --preset Debug
 ```
 
 6. Add finally build:
